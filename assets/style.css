@@ -1,0 +1,262 @@
+/* PALETTE MODE: COPPER SLATE */
+/* CTA COLOR FAMILY: Copper */
+/* BACKGROUND TEMPERATURE: warm */
+/* VISUAL MOOD: Warm executive minimal */
+:root{
+  --text-strong: #172033;
+  --text-muted: #4f5d78;
+  --text-on-dark: #f5f7ff;
+  --text-muted-on-dark: #c7d0e3;
+  --surface-0:#f4eee7;
+  --surface-1:#fbf8f4;
+  --surface-2:#2c3038;
+  --surface-card:#ffffff;
+  --border-subtle:#d7c9b8;
+  --input-bg:#fffdfa;
+  --input-border:#cab9a3;
+  --focus-ring:#dfaf7f66;
+  --shadow-soft:0 14px 32px #3e2d1c1f;
+  --accent:#b86d3c;
+  --accent-2:#6f7788;
+  --btn-height:48px;
+}
+
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;overflow-x:hidden}
+body{
+  font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+  background:var(--surface-0);
+  color:var(--text-strong);
+  font-size:18px;
+  line-height:1.65;
+}
+h1,h2,h3,h4,h5,h6{color:inherit;line-height:1.2;margin:0 0 .6rem}
+p,li,small,label{color:inherit}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+.container{max-width:1160px;margin:0 auto;padding-inline:24px}
+.section{padding:84px 0;overflow:clip}
+.section.light { background: var(--surface-1); color: var(--text-strong); }
+.section.light p, .section.light li { color: var(--text-muted); }
+.section.dark { background: var(--surface-2); color: var(--text-on-dark); }
+.section.dark p, .section.dark li { color: var(--text-muted-on-dark); }
+.section-title{max-width:760px}
+.section-intro{max-width:760px;margin-bottom:26px}
+
+header{position:sticky;top:0;z-index:20;background:#fbf8f4f2;backdrop-filter:blur(8px);border-bottom:1px solid var(--border-subtle)}
+.header-inner{display:flex;justify-content:space-between;align-items:center;gap:20px;min-height:82px}
+.brand{font-weight:800;font-size:1.1rem;color:var(--text-strong)}
+nav ul{display:flex;gap:22px;list-style:none;padding:0;margin:0}
+nav a{font-weight:600;color:var(--text-strong)}
+.header-right{display:flex;align-items:center;gap:12px}
+.btn,.lang-active{height:var(--btn-height);padding:0 18px;border-radius:12px;border:1px solid transparent;font-size:1rem;font-weight:700;display:inline-flex;align-items:center;justify-content:center}
+.btn{background:var(--accent);color:#fff;box-shadow:var(--shadow-soft)}
+.btn:hover{background:#9f5b2f;text-decoration:none}
+.btn:focus-visible,.lang-active:focus-visible{outline:none;box-shadow:0 0 0 4px var(--focus-ring)}
+.lang{position:relative}
+.lang-active{background:var(--surface-card);color:var(--text-strong);border-color:var(--border-subtle);cursor:pointer}
+.lang-menu{position:absolute;right:0;top:56px;background:var(--surface-card);border:1px solid var(--border-subtle);border-radius:12px;min-width:220px;padding:8px;box-shadow:var(--shadow-soft);display:none}
+.lang.open .lang-menu{display:block}
+.lang-menu a{display:flex;align-items:center;gap:8px;padding:9px 10px;border-radius:8px;color:var(--text-strong)}
+.lang-menu a:hover{background:#f2ebe3;text-decoration:none}
+
+.mobile-toggle{display:none;background:var(--surface-card);border:1px solid var(--border-subtle);border-radius:10px;padding:10px;line-height:1}
+.drawer-backdrop{position:fixed;inset:0;background:#0000004d;opacity:0;pointer-events:none;transition:opacity .25s}
+.drawer{position:fixed;right:0;top:0;bottom:0;width:min(420px,92%);background:var(--surface-card);padding:20px;transform:translateX(100%);transition:transform .3s;display:flex;flex-direction:column;gap:20px}
+.drawer.open{transform:translateX(0)}
+.drawer-backdrop.show{opacity:1;pointer-events:auto}
+.drawer .close{align-self:flex-end;background:none;border:none;font-size:1.6rem}
+.drawer nav ul{flex-direction:column}
+
+.hero-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:32px;align-items:start}
+.hero-panel{background:linear-gradient(130deg,#fff8f2,#f2ebe3);border:1px solid var(--border-subtle);border-radius:22px;padding:24px;box-shadow:var(--shadow-soft)}
+.performance-block{margin-top:16px;background:var(--surface-card);border:1px solid var(--border-subtle);border-radius:16px;padding:16px}
+.performance-head{font-weight:700;font-size:1rem;margin-bottom:10px}
+.performance-split{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.performance-metric{padding:12px;border:1px solid var(--border-subtle);border-radius:12px;background:#fffaf6}
+.performance-metric strong{font-size:2rem;color:var(--accent);display:block}
+.performance-metric span{font-size:.9rem;color:var(--text-muted)}
+.performance-note{margin-top:10px;font-size:.9rem;color:var(--text-muted)}
+
+.card-grid,.metric-grid,.review-grid,.faq-list,.process-grid,.insight-grid,.risk-grid,.model-grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.card,.kpi-card,.metric-card,.faq-item,.review-card,.process-card,.visual-card,.footer-panel{
+  background: var(--surface-card);
+  color: var(--text-strong);
+  border: 1px solid var(--border-subtle);
+  border-radius:16px;padding:18px;box-shadow:var(--shadow-soft);min-width:0;max-width:100%
+}
+.card p, .card li, .card .muted{
+  color: var(--text-muted);
+}
+.section.dark .card{
+  background: var(--surface-card);
+  color: var(--text-strong);
+}
+.section.dark .card p, .section.dark .card li, .section.dark .card .muted{
+  color: var(--text-muted);
+}
+.card, .card * { opacity: 1 !important; }
+.card p, .card li { opacity: 1 !important; }
+
+.form-card { 
+  background: var(--surface-card); 
+  color: var(--text-strong); 
+  border: 1px solid var(--border-subtle);
+  border-radius:18px;padding:22px;box-shadow:var(--shadow-soft)
+}
+.form-card h3, .form-card .form-title { color: var(--text-strong); }
+.form-card p, .form-card .form-sub { color: var(--text-muted); }
+.form-card label { color: var(--text-muted); }
+.form-card input {
+  width:100%;
+  background: var(--input-bg);
+  color: var(--text-strong);
+  border: 1px solid var(--input-border);
+  padding:12px;border-radius:10px;
+}
+.form-card input::placeholder { color: var(--text-muted); }
+.form-card input:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px var(--focus-ring);
+  border-color: transparent;
+}
+.form-card .field{display:flex;flex-direction:column;gap:6px;margin-bottom:12px}
+
+.faq-item button{width:100%;background:none;border:none;text-align:left;font-size:1rem;font-weight:700;color:var(--text-strong);padding:0;display:flex;justify-content:space-between;gap:16px}
+.faq-panel{max-height:0;overflow:hidden;transition:max-height .25s ease;margin-top:8px}
+.faq-item.open .faq-panel{max-height:180px}
+
+.chart-bars{display:grid;gap:10px}
+.bar-row{display:grid;grid-template-columns:130px 1fr 56px;gap:12px;align-items:center}
+.bar-track{height:12px;background:#ece2d8;border-radius:99px;overflow:hidden}
+.bar-fill{height:100%;background:linear-gradient(90deg,var(--accent),#d49b73)}
+
+.process-step-time{font-weight:800;color:var(--accent)}
+.process-note{margin-top:14px;font-weight:600}
+
+.review-head{display:flex;align-items:center;gap:10px;font-weight:700;flex-wrap:wrap}
+.avatar{width:34px;height:34px;border-radius:50%;background:#ecd8c5;display:inline-flex;align-items:center;justify-content:center;font-size:.8rem}
+.verified{font-size:.75rem;padding:2px 8px;border-radius:999px;background:#eef5ef;color:#2f6f3a}
+
+footer{padding:56px 0;border-top:1px solid var(--border-subtle);background:linear-gradient(180deg,#f8f2eb,#f3ebe2)}
+.footer-grid{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:24px}
+.footer-links a{display:block;margin-bottom:8px;color:var(--text-strong)}
+
+.modal{position:fixed;inset:0;background:#00000059;display:none;align-items:center;justify-content:center;padding:24px}
+.modal.show{display:flex}
+.modal-card{max-width:860px;max-height:86vh;overflow:auto}
+.modal-head{display:flex;justify-content:space-between;align-items:center}
+.modal-close{background:none;border:none;font-size:1.4rem}
+.modal-foot{display:flex;justify-content:flex-start;margin-top:16px}
+
+:root{
+  --text-strong: #172033;
+  --text-muted: #4f5d78;
+  --text-on-dark: #f5f7ff;
+  --text-muted-on-dark: #c7d0e3;
+}
+body{
+  color: var(--text-strong);
+}
+h1, h2, h3, h4, h5, h6{
+  color: inherit;
+}
+p, li, small, label{
+  color: inherit;
+}
+.section.light{
+  background: var(--surface-1);
+  color: var(--text-strong);
+}
+.section.light p,
+.section.light li,
+.section.light small,
+.section.light label{
+  color: var(--text-muted);
+}
+.section.dark{
+  background: var(--surface-2);
+  color: var(--text-on-dark);
+}
+.section.dark p,
+.section.dark li,
+.section.dark small,
+.section.dark label{
+  color: var(--text-muted-on-dark);
+}
+.card,
+.form-card,
+.kpi-card,
+.metric-card,
+.faq-item,
+.review-card,
+.process-card,
+.visual-card,
+.footer-panel,
+.hero-panel{
+  color: var(--text-strong);
+}
+.card h3, .card h4, .card strong,
+.form-card h3, .form-card h4, .form-card strong,
+.kpi-card h3, .metric-card h3,
+.faq-item summary,
+.review-card h4,
+.process-card h4,
+.visual-card h4,
+.footer-panel h4,
+.hero-panel h4{
+  color: var(--text-strong);
+}
+.card p, .card li, .card small, .card label,
+.form-card p, .form-card li, .form-card small, .form-card label,
+.kpi-card p, .metric-card p,
+.faq-item p,
+.review-card p, .review-card small,
+.process-card p,
+.visual-card p,
+.footer-panel p,
+.hero-panel p{
+  color: var(--text-muted);
+}
+.section.dark .card,
+.section.dark .form-card,
+.section.dark .kpi-card,
+.section.dark .metric-card,
+.section.dark .faq-item,
+.section.dark .review-card,
+.section.dark .process-card,
+.section.dark .visual-card,
+.section.dark .footer-panel,
+.section.dark .hero-panel{
+  background: var(--surface-card);
+  color: var(--text-strong);
+}
+.section.dark .card h3, .section.dark .card h4, .section.dark .card strong,
+.section.dark .form-card h3, .section.dark .form-card h4, .section.dark .form-card strong,
+.section.dark .faq-item summary,
+.section.dark .review-card h4,
+.section.dark .process-card h4,
+.section.dark .visual-card h4{
+  color: var(--text-strong);
+}
+.section.dark .card p, .section.dark .card li, .section.dark .card small, .section.dark .card label,
+.section.dark .form-card p, .section.dark .form-card li, .section.dark .form-card small, .section.dark .form-card label,
+.section.dark .faq-item p,
+.section.dark .review-card p,
+.section.dark .process-card p,
+.section.dark .visual-card p{
+  color: var(--text-muted);
+}
+p, li, small, label, input, ::placeholder{
+  opacity: 1 !important;
+}
+.card *, .form-card *, .faq-item *, .review-card *, .metric-card *{
+  text-shadow: none !important;
+}
+
+@media (max-width:900px){
+  .mobile-toggle{display:inline-flex}
+  .desktop-nav,.desktop-actions{display:none}
+  .hero-grid{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr}
+}
